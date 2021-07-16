@@ -1,14 +1,21 @@
-import React, { useContext } from 'react'
-import { ScrollView } from 'react-native';
+import { StackScreenProps } from '@react-navigation/stack';
+import React, { useContext, useEffect } from 'react'
+import { FlatList, ScrollView } from 'react-native';
 import { Text, View } from 'react-native';
+import { TouchableOpacity } from 'react-native-gesture-handler';
 import CardTile from '../components/CardTile';
 import { DatabaseContext } from '../database/DatabaseContext';
 import { globalStyles } from '../styles/globalStyles';
 import { homeScreenStyle } from '../styles/homeStyles';
 
 
-const HomeScreen = () => {
+interface Props extends StackScreenProps<any> {};
+
+const HomeScreen = ({navigation}: Props) => {
   const {cryptos, getData, users} = useContext(DatabaseContext)
+  useEffect(() => {
+    
+  }, [])
 
   const PortfolioHeader = () => (
     <>
@@ -42,16 +49,24 @@ const HomeScreen = () => {
           <Text style={homeScreenStyle.headerText}>Current</Text>
           <Text style={homeScreenStyle.headerText}>Qty</Text>
         </View>
-        <ScrollView
+        <FlatList
           showsVerticalScrollIndicator={false}
-        >
-          { cryptos?.map((c, i) => (
-            <CardTile key={c.Id} name={c.name} price={c.price} current={0.21} quantity={c.quantity} />
-          ))}
-           { users?.map((u, i) => (
-            <Text key={i}>{u.Name} </Text>
-          ))}
-        </ScrollView>
+          numColumns={1}
+          data={cryptos}
+          keyExtractor={(c) => String(c.Id)}
+          renderItem={({item}) => (
+            <TouchableOpacity
+              onPress={() => navigation.navigate('EditScreen', {
+                routeId: item.Id,
+                routeName: item.name,
+                routePrice: item.price,
+                routeQuantity: item.quantity
+              })}
+            >
+              <CardTile key={item.Id} name={item.name} price={item.price} current={0.21} quantity={item.quantity} />
+            </TouchableOpacity>
+          )}
+        />
       </View>
     )
   }

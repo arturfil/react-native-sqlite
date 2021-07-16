@@ -6,6 +6,7 @@ import AddStockScreen from '../screens/AddStockScreen';
 import HomeScreen from '../screens/HomeScreen';
 import ProfileScreen from '../screens/ProfileScreen';
 import { COLORS } from '../styles/Constants';
+import CryptosNavigation from './CryptosNavigation';
 
 
 const Tab = createBottomTabNavigator();
@@ -26,7 +27,7 @@ const ScreenTabs = () => {
     >
       <Tab.Screen
         name="Home"
-        component={HomeScreen}
+        component={CryptosNavigation}
         options={{
           tabBarLabel: "Stocks",
           tabBarIcon: ({color}) => <Icon name="home-filled" color={color} size={25} />
