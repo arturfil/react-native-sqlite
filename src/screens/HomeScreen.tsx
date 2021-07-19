@@ -57,7 +57,7 @@ const HomeScreen = ({navigation}: Props) => {
           renderItem={({item}) => (
             <TouchableOpacity
               onPress={() => navigation.navigate('EditScreen', {
-                routeId: item.Id,
+                routedId: item.Id,
                 routeName: item.name,
                 routePrice: item.price,
                 routeQuantity: item.quantity

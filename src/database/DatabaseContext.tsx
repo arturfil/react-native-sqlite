@@ -8,7 +8,9 @@ import { User } from '../interfaces/User';
 type DataBaseContextProps = {
   cryptos: Crypto[];
   users: User[];
+  singleCrypto: Crypto;
   getData: () => Promise<void>;
+  getSingleCrypto: (id: number) => Promise<void>;
   createTable: () => Promise<void>;
   setData: (name: string, price: string, quantity: number) => Promise<void>;
   updateData: (id: number, name: string, price: string, quantity: number) => Promise<void>;
@@ -19,15 +21,23 @@ export const DatabaseContext = createContext({} as DataBaseContextProps);
 
 export const DatabaseProvider = ({ children }: any) => {
   const [cryptos, setCryptos] = useState<Crypto[]>([]);
+  const [singleCrypto, setSingleCrypto] = useState<Crypto>({
+    Id: 0,
+    name: '',
+    price: '',
+    quantity: 0,
+  });
   const [users, setUsers] = useState<User[]>([]);
 
   useEffect(() => {
-    // getData2();
     createTable();
     getData();
-    // setData('Doge 2','0.25053', 500);    
-    // deleteData(3)
-    // updateData(5, "DogeCoin3", '0.05326', 1800);
+  }, [])
+
+  useEffect(() => {
+    return () => {
+      console.log("Clean up");
+    }
   }, [])
 
   const db = SQLite.openDatabase({
@@ -80,6 +90,23 @@ export const DatabaseProvider = ({ children }: any) => {
     }
   }
 
+  const getSingleCrypto = async (id: number) => {
+    try {
+      db.transaction(async tx => {
+        tx.executeSql(`
+          SELECT * FROM Cryptos WHERE Id = ${id}
+        `, [], async (tx, res) => {
+          console.log("Inside getSingleCrypto", res.rows.item(0));
+          const response:Crypto = res.rows.item(0);    
+          setSingleCrypto(response);
+          return response;
+        })
+      })
+    } catch (error) {
+      
+    }
+  }
+
   const setData = async (name: string, price: string, quantity: number) => {
     if (name.length == 0 || price.toString().length == 0 || quantity.toString().length == 0) {
       Alert.alert('Warnign!', 'Please make sure to have data!')
@@ -105,6 +132,7 @@ export const DatabaseProvider = ({ children }: any) => {
           WHERE Id = ${id}
         `)
       })
+      getData();
     } catch (error) {
       
     }
@@ -126,8 +154,10 @@ export const DatabaseProvider = ({ children }: any) => {
     <DatabaseContext.Provider value={{
       cryptos,
       users,
+      singleCrypto,
       createTable,
       getData,
+      getSingleCrypto,
       setData,
       updateData,
       deleteData

@@ -5,7 +5,7 @@ import HomeScreen from '../screens/HomeScreen';
 
 export type CryptoStackParams = {
   HomeScreen: undefined;
-  EditScreen: { id?: string, name?: string }
+  EditScreen: { routedId: number, routedName: string }
 }
 
 const Stack = createStackNavigator<CryptoStackParams>();
