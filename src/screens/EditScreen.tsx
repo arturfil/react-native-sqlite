@@ -24,18 +24,19 @@ const EditScreen = ({navigation, route}: Props) => {
 
   useEffect(() => {
     loadCrypto();
-  }, [singleCrypto])
-  
+  }, [routedId]) 
+
   useEffect(() => {
-    setValues();
+    setValues()
   }, [singleCrypto])
 
   const loadCrypto = async () => {
     setLoading(true);
-    if (!routedId ) {
+    if (routedId === 0) {
       Alert.alert("Id is null")
       return;
     }
+    
     getSingleCrypto(Id);
     setLoading(false);          
   }
