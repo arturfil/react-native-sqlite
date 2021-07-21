@@ -8,12 +8,12 @@ import { User } from '../interfaces/User';
 type DataBaseContextProps = {
   cryptos: Crypto[];
   users: User[];
-  portfolioValue: number;
   currentPrice: number;
   singleCrypto: Crypto;
+  currentTotal: number;
+  initialInvs: number;
   getData: () => Promise<void>;
   getPrice: () => Promise<void>;
-  // getPortfolioValue: () => Promise<void>;
   getSingleCrypto: (id: number) => Promise<void>;
   createTable: () => Promise<void>;
   setData: (name: string, price: string, quantity: number) => Promise<void>;
@@ -24,7 +24,6 @@ type DataBaseContextProps = {
 export const DatabaseContext = createContext({} as DataBaseContextProps);
 
 export const DatabaseProvider = ({ children }: any) => {
-  const [portfolioValue, setPortfolioValue] = useState<number>(0)
   const [cryptos, setCryptos] = useState<Crypto[]>([]);
   const [currentPrice, setCurrentPrice] = useState<number>(0)
   const [singleCrypto, setSingleCrypto] = useState<Crypto>({
@@ -33,17 +32,32 @@ export const DatabaseProvider = ({ children }: any) => {
     price: '',
     quantity: 0,
   });
+  const [currentTotal, setCurrentTotal] = useState<number>(0); 
+  const [initialInvs, setInitialInvs] = useState<number>(0)
   const [users, setUsers] = useState<User[]>([]);
 
   useEffect(() => {
     createTable();
-    getData();
     getPrice();
-  }, [portfolioValue])
+    getData()
+  }, [])
 
-  // useEffect(() => {
-  //   getPortfolioValue()
-  // }, [portfolioValue])
+  useEffect(() => {
+    getPorfolioValue();
+  }, [cryptos, currentPrice])
+
+  const getPorfolioValue = () => {
+    let current:number = 0;
+    let inv:number = 0;
+    if (cryptos.length <= 0) return;
+    cryptos.forEach(c => {
+      current += (currentPrice * c.quantity)
+      inv += (parseFloat(c.price) * c.quantity)
+    })
+    setCurrentTotal(current);
+    setInitialInvs(inv);
+  }
+
 
   const db = SQLite.openDatabase({
     name: 'rnsqlite.db',
@@ -101,7 +115,6 @@ export const DatabaseProvider = ({ children }: any) => {
           [], (tx, res) => {
             for (let i = 0; i < res.rows.length; i++) {
               console.log("Inside loop --------->");
-
               console.log("Item", res.rows.item(i));
               let crypto = res.rows.item(i)
               dbCryptos.push(crypto)
@@ -179,12 +192,12 @@ export const DatabaseProvider = ({ children }: any) => {
     <DatabaseContext.Provider value={{
       cryptos,
       currentPrice,
-      portfolioValue,
       users,
       singleCrypto,
       createTable,
       getData,
-      // getPortfolioValue,
+      currentTotal,
+      initialInvs,
       getPrice,
       getSingleCrypto,
       setData,

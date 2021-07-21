@@ -23,30 +23,26 @@ const EditScreen = ({navigation, route}: Props) => {
   });
 
   useEffect(() => {
-    // loadCrypto();
-    const unsubscribe = navigation.addListener('focus', () => {
-      loadCrypto();
-    })
-    return () => {
-      unsubscribe();
-    }
-  }, []) 
+    loadCrypto();
+  }, [singleCrypto])
+  
+  useEffect(() => {
+    setValues();
+  }, [singleCrypto])
 
   const loadCrypto = async () => {
     setLoading(true);
-    if (routedId === 0) {
+    if (!routedId ) {
       Alert.alert("Id is null")
       return;
     }
-    
     getSingleCrypto(Id);
-    setValues();
     setLoading(false);          
   }
   
   const setValues = async () => {
     setFormValue({
-      Id: singleCrypto.Id,
+      Id: routedId,
       name: singleCrypto.name,
       price: singleCrypto.price,
       quantity: singleCrypto.quantity

@@ -12,24 +12,7 @@ import { homeScreenStyle } from '../styles/homeStyles';
 interface Props extends StackScreenProps<any> { };
 
 const HomeScreen = ({ navigation }: Props) => {
-  const { cryptos, users, portfolioValue, currentPrice } = useContext(DatabaseContext);
-  const [currentTotal, setCurrentTotal] = useState<number>(0); 
-  const [intialInvs, setIntialInvs] = useState<number>(0)
-
-  useEffect(() => {
-    getPorfolioValue();
-  }, [])
-
-  const getPorfolioValue = () => {
-    let current:number = 0;
-    let inv:number = 0;
-    cryptos.map(c => {
-      current += (currentPrice * c.quantity)
-      inv += (parseFloat(c.price) * c.quantity)
-    })
-    setCurrentTotal(current);
-    setIntialInvs(inv);
-  }
+  const { cryptos, users, currentTotal, initialInvs, currentPrice } = useContext(DatabaseContext);
 
   const PortfolioHeader = () => (
     <>
@@ -47,7 +30,7 @@ const HomeScreen = ({ navigation }: Props) => {
             Initial Investement
           </Text>
           <Text style={homeScreenStyle.subHeaderText}>
-            ${intialInvs?.toFixed(2)}
+            ${initialInvs?.toFixed(2)}
           </Text>
         </View>
       </View>
@@ -88,7 +71,7 @@ const HomeScreen = ({ navigation }: Props) => {
   const PriceTicker = () => {
     return (
       <View style={homeScreenStyle.priceBox}>
-        <Text style={homeScreenStyle.priceText}>DOGE Price: ${currentPrice}</Text>
+        <Text style={homeScreenStyle.priceText}>DOGE Price: ${currentPrice.toFixed(4)}</Text>
       </View>
     )
   }
