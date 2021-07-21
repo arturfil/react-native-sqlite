@@ -1,3 +1,4 @@
+import { TabActions } from '@react-navigation/native'
 import React, { useContext } from 'react'
 import { Alert, StyleSheet, TextInput } from 'react-native'
 import { View } from 'react-native'
@@ -8,7 +9,7 @@ import { useForm } from '../hooks/useForm'
 import { COLORS } from '../styles/Constants'
 import { globalStyles } from '../styles/globalStyles'
 
-const AddStockScreent = () => {
+const AddStockScreent = ({navigation}:any) => {
   const { setData } = useContext(DatabaseContext)
   const { name, price, quantity, onChange, setFormValue } = useForm({
     name: '',
@@ -18,7 +19,8 @@ const AddStockScreent = () => {
 
   const createPurchse = () => {
     setData(name, price, quantity);
-    Alert.alert("New purchase was created");
+    const jump = TabActions.jumpTo('Home');
+    navigation.dispatch(jump)
     setFormValue({name: '', price: '', quantity: 0});
   }
 

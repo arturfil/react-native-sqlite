@@ -1,5 +1,5 @@
 import { StackScreenProps } from '@react-navigation/stack';
-import React, { useContext, useEffect } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import { FlatList, ScrollView } from 'react-native';
 import { Text, View } from 'react-native';
 import { TouchableOpacity } from 'react-native-gesture-handler';
@@ -9,13 +9,27 @@ import { globalStyles } from '../styles/globalStyles';
 import { homeScreenStyle } from '../styles/homeStyles';
 
 
-interface Props extends StackScreenProps<any> {};
+interface Props extends StackScreenProps<any> { };
 
-const HomeScreen = ({navigation}: Props) => {
-  const {cryptos, getData, users} = useContext(DatabaseContext)
+const HomeScreen = ({ navigation }: Props) => {
+  const { cryptos, users, portfolioValue, currentPrice } = useContext(DatabaseContext);
+  const [currentTotal, setCurrentTotal] = useState<number>(0); 
+  const [intialInvs, setIntialInvs] = useState<number>(0)
+
   useEffect(() => {
-    
+    getPorfolioValue();
   }, [])
+
+  const getPorfolioValue = () => {
+    let current:number = 0;
+    let inv:number = 0;
+    cryptos.map(c => {
+      current += (currentPrice * c.quantity)
+      inv += (parseFloat(c.price) * c.quantity)
+    })
+    setCurrentTotal(current);
+    setIntialInvs(inv);
+  }
 
   const PortfolioHeader = () => (
     <>
@@ -25,7 +39,7 @@ const HomeScreen = ({navigation}: Props) => {
             Current Portfolio
           </Text>
           <Text style={[homeScreenStyle.subHeaderText, { color: 'green' }]}>
-            $4,000.38
+            ${currentTotal?.toFixed(2)}
           </Text>
         </View>
         <View style={homeScreenStyle.subHeaderRow}>
@@ -33,7 +47,7 @@ const HomeScreen = ({navigation}: Props) => {
             Initial Investement
           </Text>
           <Text style={homeScreenStyle.subHeaderText}>
-            $500.00
+            ${intialInvs?.toFixed(2)}
           </Text>
         </View>
       </View>
@@ -54,7 +68,7 @@ const HomeScreen = ({navigation}: Props) => {
           numColumns={1}
           data={cryptos}
           keyExtractor={(c) => String(c.Id)}
-          renderItem={({item}) => (
+          renderItem={({ item }) => (
             <TouchableOpacity
               onPress={() => navigation.navigate('EditScreen', {
                 routedId: item.Id,
@@ -63,7 +77,7 @@ const HomeScreen = ({navigation}: Props) => {
                 routeQuantity: item.quantity
               })}
             >
-              <CardTile key={item.Id} name={item.name} price={item.price} current={0.21} quantity={item.quantity} />
+              <CardTile key={item.Id} name={item.name} price={item.price} current={currentPrice * item.quantity} quantity={item.quantity} />
             </TouchableOpacity>
           )}
         />
@@ -74,7 +88,7 @@ const HomeScreen = ({navigation}: Props) => {
   const PriceTicker = () => {
     return (
       <View style={homeScreenStyle.priceBox}>
-        <Text style={homeScreenStyle.priceText}>DOGE Price: $0.21</Text>
+        <Text style={homeScreenStyle.priceText}>DOGE Price: ${currentPrice}</Text>
       </View>
     )
   }

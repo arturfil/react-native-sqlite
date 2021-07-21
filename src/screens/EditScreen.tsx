@@ -12,7 +12,8 @@ import { globalStyles } from '../styles/globalStyles'
 interface Props extends StackScreenProps<CryptoStackParams, 'EditScreen'> {}; 
 
 const EditScreen = ({navigation, route}: Props) => {
-  const {getSingleCrypto, singleCrypto, updateData} = useContext(DatabaseContext)
+  const {getSingleCrypto, singleCrypto, updateData, deleteData} = useContext(DatabaseContext);
+  const [loading, setLoading] = useState<boolean>(false);
   const { routedId = 0, routedName } = route.params;
   const { Id, name, price, quantity, onChange, setFormValue} = useForm({
     Id: routedId,
@@ -22,27 +23,44 @@ const EditScreen = ({navigation, route}: Props) => {
   });
 
   useEffect(() => {
-    loadCrypto();
-  }, [])
+    // loadCrypto();
+    const unsubscribe = navigation.addListener('focus', () => {
+      loadCrypto();
+    })
+    return () => {
+      unsubscribe();
+    }
+  }, []) 
 
   const loadCrypto = async () => {
+    setLoading(true);
     if (routedId === 0) {
       Alert.alert("Id is null")
       return;
     }
-    getSingleCrypto(routedId)
     
+    getSingleCrypto(Id);
+    setValues();
+    setLoading(false);          
+  }
+  
+  const setValues = async () => {
     setFormValue({
-      Id: routedId,
+      Id: singleCrypto.Id,
       name: singleCrypto.name,
       price: singleCrypto.price,
       quantity: singleCrypto.quantity
-    })
-  }
+    });
+  } 
 
   const editCrypto = () => {
     updateData(Id, name, price, quantity);
     navigation.navigate('HomeScreen');
+  }
+
+  const deleteCrypto = () => {
+    deleteData(routedId);
+    navigation.navigate('HomeScreen')
   }
 
   return (
@@ -50,7 +68,9 @@ const EditScreen = ({navigation, route}: Props) => {
       <Text style={globalStyles.title}>
         Edit your Stock
       </Text>
-      <View style={style.inputBox}>
+      { !loading ?
+        (
+          <View style={style.inputBox}>
         <TextInput 
           onChangeText={value => onChange(value, 'name')} 
           value={name} 
@@ -68,9 +88,14 @@ const EditScreen = ({navigation, route}: Props) => {
           style={style.input} 
           keyboardType="number-pad" 
           placeholder="Enter Enter quantity" />
-        <CustomButton top={20} title="Edit Crypto" func={() => updateData(Id, name, price, quantity)} />
-        <CustomButton top={10} title="Delete Crypto" func={() => console.log("Delete")}/>
+        <CustomButton top={20} title="Edit Crypto" func={() => editCrypto()} />
+        <CustomButton top={10} title="Delete Crypto" func={() => deleteCrypto()}/>
       </View>
+        ) : (
+          <Text>Loading ...</Text>
+        )
+      }
+      
     </View>
   )
 }

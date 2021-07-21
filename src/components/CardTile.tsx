@@ -16,10 +16,10 @@ const CardTile = ({name, price, current, quantity}: CardProps) => {
           {name}
         </Text>
         <Text>
-          {price}
+          ${price}
         </Text>
         <Text>
-          {current}
+          ${current.toFixed(2)}
         </Text>
         <Text>
           {quantity}

@@ -8,8 +8,12 @@ import { User } from '../interfaces/User';
 type DataBaseContextProps = {
   cryptos: Crypto[];
   users: User[];
+  portfolioValue: number;
+  currentPrice: number;
   singleCrypto: Crypto;
   getData: () => Promise<void>;
+  getPrice: () => Promise<void>;
+  // getPortfolioValue: () => Promise<void>;
   getSingleCrypto: (id: number) => Promise<void>;
   createTable: () => Promise<void>;
   setData: (name: string, price: string, quantity: number) => Promise<void>;
@@ -20,7 +24,9 @@ type DataBaseContextProps = {
 export const DatabaseContext = createContext({} as DataBaseContextProps);
 
 export const DatabaseProvider = ({ children }: any) => {
+  const [portfolioValue, setPortfolioValue] = useState<number>(0)
   const [cryptos, setCryptos] = useState<Crypto[]>([]);
+  const [currentPrice, setCurrentPrice] = useState<number>(0)
   const [singleCrypto, setSingleCrypto] = useState<Crypto>({
     Id: 0,
     name: '',
@@ -32,13 +38,12 @@ export const DatabaseProvider = ({ children }: any) => {
   useEffect(() => {
     createTable();
     getData();
-  }, [])
+    getPrice();
+  }, [portfolioValue])
 
-  useEffect(() => {
-    return () => {
-      console.log("Clean up");
-    }
-  }, [])
+  // useEffect(() => {
+  //   getPortfolioValue()
+  // }, [portfolioValue])
 
   const db = SQLite.openDatabase({
     name: 'rnsqlite.db',
@@ -49,6 +54,25 @@ export const DatabaseProvider = ({ children }: any) => {
       console.log(error);
     }
   )
+
+  interface Coin {
+    dogecoin: Currency
+  }
+
+  interface Currency {
+    usd?: number
+  }
+
+
+  const getPrice = async () => {
+    const res = await fetch('https://api.coingecko.com/api/v3/simple/price?ids=dogecoin&vs_currencies=usd');
+    const price: Coin = await res.json();
+    console.log(price.dogecoin.usd);
+    if (price.dogecoin.usd)
+      setCurrentPrice(price.dogecoin.usd)
+    else
+      return;
+  }
 
   const createTable = async () => {
     db.transaction((tx) => {
@@ -97,13 +121,13 @@ export const DatabaseProvider = ({ children }: any) => {
           SELECT * FROM Cryptos WHERE Id = ${id}
         `, [], async (tx, res) => {
           console.log("Inside getSingleCrypto", res.rows.item(0));
-          const response:Crypto = res.rows.item(0);    
+          const response: Crypto = res.rows.item(0);
           setSingleCrypto(response);
           return response;
         })
       })
     } catch (error) {
-      
+
     }
   }
 
@@ -116,7 +140,7 @@ export const DatabaseProvider = ({ children }: any) => {
         await tx.executeSql(
           `INSERT INTO Cryptos (name, price, quantity) VALUES (?, ?, ?)`, [name, price, quantity])
       })
-      Alert.alert("Crypto was inserted");
+      // Alert.alert("Crypto Purchase was created");
       getData();
     } catch (error) {
       Alert.alert("Error", error);
@@ -134,7 +158,7 @@ export const DatabaseProvider = ({ children }: any) => {
       })
       getData();
     } catch (error) {
-      
+
     }
   }
 
@@ -145,6 +169,7 @@ export const DatabaseProvider = ({ children }: any) => {
           DELETE FROM Cryptos where Id = ${id}; 
         `)
       })
+      getData();
     } catch (error) {
       Alert.alert("The deletion wasn't able to be done");
     }
@@ -153,10 +178,14 @@ export const DatabaseProvider = ({ children }: any) => {
   return (
     <DatabaseContext.Provider value={{
       cryptos,
+      currentPrice,
+      portfolioValue,
       users,
       singleCrypto,
       createTable,
       getData,
+      // getPortfolioValue,
+      getPrice,
       getSingleCrypto,
       setData,
       updateData,
