@@ -31,7 +31,7 @@ const CryptosNavigation = (stack: CryptoStackParams) => {
       <Stack.Screen
         name="EditScreen"
         component={EditScreen}
-      // options={/title}
+      options={{title: 'Edit Crypto', headerTitleAlign: 'center'}}
       />
     </Stack.Navigator>
   )

@@ -13,11 +13,13 @@ type DataBaseContextProps = {
   currentTotal: number;
   initialInvs: number;
   getData: () => Promise<void>;
+  createUser: (name: string) => Promise<void>;
   getPrice: () => Promise<void>;
   getSingleCrypto: (id: number) => Promise<void>;
   createTable: () => Promise<void>;
   setData: (name: string, price: string, quantity: number) => Promise<void>;
   updateData: (id: number, name: string, price: string, quantity: number) => Promise<void>;
+  editUser: (id: number, name: string) => Promise<void>
   deleteData: (id: number) => Promise<void>;
 }
 
@@ -38,8 +40,10 @@ export const DatabaseProvider = ({ children }: any) => {
 
   useEffect(() => {
     createTable();
+    createUserTable();
     getPrice();
-    getData()
+    getUser();
+    getData();
   }, [])
 
   useEffect(() => {
@@ -57,7 +61,6 @@ export const DatabaseProvider = ({ children }: any) => {
     setCurrentTotal(current);
     setInitialInvs(inv);
   }
-
 
   const db = SQLite.openDatabase({
     name: 'rnsqlite.db',
@@ -88,6 +91,44 @@ export const DatabaseProvider = ({ children }: any) => {
       return;
   }
 
+  const createUserTable = async () => {
+    db.transaction(tx => {
+      tx.executeSql(`
+        CREATE TABLE IF NOT EXISTS
+        Users
+        (Id INTEGER PRIMARY KEY AUTOINCREMENT, Name TEXT)
+      `)
+    })
+  }
+
+  const createUser = async (name: string) => {
+    try {
+      db.transaction(tx => {
+        tx.executeSql(`
+          INSERT INTO Users (Name)
+          VALUES (?)
+        `, [name])
+      })
+    } catch (error) {
+      console.log(error);
+    }
+  }
+
+  const editUser = async (id: number, name: string) => {
+    try {
+      db.transaction(tx => {
+        tx.executeSql(`
+          UPDATE Users 
+          SET Name = '${name}'
+          WHERE Id = '${id}'
+        `)
+      })
+      getUser();
+    } catch (error) {
+      console.log(error);
+    }
+  }
+
   const createTable = async () => {
     db.transaction((tx) => {
       tx.executeSql(`
@@ -101,9 +142,28 @@ export const DatabaseProvider = ({ children }: any) => {
   const dropTable = async () => {
     db.transaction(tx => {
       tx.executeSql(`
-        DROP TABLE Cryptos;
+        DROP TABLE Users;
       `)
     })
+  }
+
+  const getUser = async () => {
+    let dbUsers: User[] = [];
+    try {
+      db.transaction(tx => {
+        tx.executeSql(`
+          SELECT * FROM Users
+        `, [], (tx, res) => {
+          for (let i = 0; i < res.rows.length; i++) {
+            console.log("User", res.rows.item(i));
+            let user = res.rows.item(i);
+            setUsers(user);
+          }
+        })
+      })
+    } catch (e) {
+      console.log(e);
+    }
   }
 
   const getData = async () => {
@@ -192,6 +252,7 @@ export const DatabaseProvider = ({ children }: any) => {
     <DatabaseContext.Provider value={{
       cryptos,
       currentPrice,
+      createUser,
       users,
       singleCrypto,
       createTable,
@@ -202,6 +263,7 @@ export const DatabaseProvider = ({ children }: any) => {
       getSingleCrypto,
       setData,
       updateData,
+      editUser,
       deleteData
     }}>
       {children}

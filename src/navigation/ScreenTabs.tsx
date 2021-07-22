@@ -7,6 +7,7 @@ import HomeScreen from '../screens/HomeScreen';
 import ProfileScreen from '../screens/ProfileScreen';
 import { COLORS } from '../styles/Constants';
 import CryptosNavigation from './CryptosNavigation';
+import UsersNavigation from './UsersNavigation';
 
 
 const Tab = createBottomTabNavigator();
@@ -43,7 +44,7 @@ const ScreenTabs = () => {
       />
       <Tab.Screen
         name="Profile"
-        component={ProfileScreen}
+        component={UsersNavigation}
         options={{
           tabBarLabel: "Profile",
           tabBarIcon: ({color}) => <Icon name="person" color={color} size={25} />

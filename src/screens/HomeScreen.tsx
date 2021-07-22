@@ -1,6 +1,6 @@
 import { StackScreenProps } from '@react-navigation/stack';
 import React, { useContext, useEffect, useState } from 'react'
-import { FlatList, ScrollView } from 'react-native';
+import { FlatList, RefreshControl, ScrollView } from 'react-native';
 import { Text, View } from 'react-native';
 import { TouchableOpacity } from 'react-native-gesture-handler';
 import CardTile from '../components/CardTile';
@@ -12,7 +12,8 @@ import { homeScreenStyle } from '../styles/homeStyles';
 interface Props extends StackScreenProps<any> { };
 
 const HomeScreen = ({ navigation }: Props) => {
-  const { cryptos, users, currentTotal, initialInvs, currentPrice } = useContext(DatabaseContext);
+  const { cryptos, users, currentTotal, initialInvs, currentPrice, getData, getPrice } = useContext(DatabaseContext);
+  const [isRefreshing, setIsRefreshing] = useState<boolean>(false)
 
   const PortfolioHeader = () => (
     <>
@@ -21,7 +22,7 @@ const HomeScreen = ({ navigation }: Props) => {
           <Text style={homeScreenStyle.subHeaderText}>
             Current Portfolio
           </Text>
-          <Text style={[homeScreenStyle.subHeaderText, { color: 'green' }]}>
+          <Text style={[homeScreenStyle.subHeaderText, currentTotal > initialInvs ? { color: 'green' } : { color: 'red' }]}>
             ${currentTotal?.toFixed(2)}
           </Text>
         </View>
@@ -36,6 +37,13 @@ const HomeScreen = ({ navigation }: Props) => {
       </View>
     </>
   )
+
+  const refreshData = async () => {
+    setIsRefreshing(true)
+    await getData();
+    await getPrice();
+    setIsRefreshing(false)
+  }
 
   const StockList = () => {
     return (
@@ -63,6 +71,12 @@ const HomeScreen = ({ navigation }: Props) => {
               <CardTile key={item.Id} name={item.name} price={item.price} current={currentPrice * item.quantity} quantity={item.quantity} />
             </TouchableOpacity>
           )}
+          refreshControl={
+            <RefreshControl
+              refreshing={isRefreshing}
+              onRefresh={refreshData}
+            />
+          }
         />
       </View>
     )
