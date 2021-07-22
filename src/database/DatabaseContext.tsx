@@ -7,7 +7,7 @@ import { User } from '../interfaces/User';
 
 type DataBaseContextProps = {
   cryptos: Crypto[];
-  users: User[];
+  user: User;
   currentPrice: number;
   singleCrypto: Crypto;
   currentTotal: number;
@@ -36,7 +36,10 @@ export const DatabaseProvider = ({ children }: any) => {
   });
   const [currentTotal, setCurrentTotal] = useState<number>(0); 
   const [initialInvs, setInitialInvs] = useState<number>(0)
-  const [users, setUsers] = useState<User[]>([]);
+  const [user, setUser] = useState<User>({
+    Id: 0,
+    Name: 'Not Set Yet'
+  });
 
   useEffect(() => {
     createTable();
@@ -109,6 +112,7 @@ export const DatabaseProvider = ({ children }: any) => {
           VALUES (?)
         `, [name])
       })
+      getUser();
     } catch (error) {
       console.log(error);
     }
@@ -148,16 +152,18 @@ export const DatabaseProvider = ({ children }: any) => {
   }
 
   const getUser = async () => {
-    let dbUsers: User[] = [];
+    let dbUsers: User;
     try {
       db.transaction(tx => {
         tx.executeSql(`
           SELECT * FROM Users
         `, [], (tx, res) => {
           for (let i = 0; i < res.rows.length; i++) {
-            console.log("User", res.rows.item(i));
+            // console.log("User", res.rows.item(i));
             let user = res.rows.item(i);
-            setUsers(user);
+            // dbUsers.push(user);
+            console.log(dbUsers);
+            setUser(user);
           }
         })
       })
@@ -253,7 +259,7 @@ export const DatabaseProvider = ({ children }: any) => {
       cryptos,
       currentPrice,
       createUser,
-      users,
+      user,
       singleCrypto,
       createTable,
       getData,

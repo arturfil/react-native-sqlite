@@ -13,7 +13,7 @@ interface Props extends StackScreenProps<UsersStackParams, 'ProfileScreen'> { }
 
 const ProfileScreen = ({ navigation }: Props) => {
   const [name, setName] = useState<string>();
-  const { users, currentTotal, initialInvs, currentPrice } = useContext(DatabaseContext)
+  const { user, currentTotal, initialInvs, currentPrice } = useContext(DatabaseContext)
 
   useEffect(() => {
     navigation.setOptions({
@@ -22,12 +22,12 @@ const ProfileScreen = ({ navigation }: Props) => {
           onPress={() => navigation.navigate('EditProfileScreen', {})}
           activeOpacity={0.8}
         >
-          <Icon style={{ marginRight: 20 }} name="settings" color={COLORS.primary} size={20} />
+          <Icon style={{ marginRight: 20 }} name="settings" color={COLORS.primary} size={24} />
         </TouchableOpacity>
       )
     })
-    if (users) setName(users.Name)
-    console.log("CHECK HERE", users.Name);
+    if (user) setName(user.Name)
+    console.log("CHECK HERE", user.Name);
 
   })
 

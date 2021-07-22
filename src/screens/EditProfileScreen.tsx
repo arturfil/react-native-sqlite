@@ -12,7 +12,7 @@ import { globalStyles } from '../styles/globalStyles'
 interface Props extends StackScreenProps<UsersStackParams, 'EditProfileScreen'> {}; 
 
 const EditProfileScreen = ({navigation}: Props) => {
-  const {users, createUser, editUser} = useContext(DatabaseContext);
+  const {user, createUser, editUser} = useContext(DatabaseContext);
   const { Id, name, onChange, setFormValue } = useForm({
     Id: 0,
     name: 'User Name Not Set'
@@ -20,16 +20,16 @@ const EditProfileScreen = ({navigation}: Props) => {
   });
 
   useEffect(() => {
-    if (users) {
+    if (user) {
       setFormValue({
-        name: users.Name,
-        Id: users.Id
+        name: user.Name,
+        Id: user.Id
       })
     }
   }, [])
 
   const createOrEditUser = (name: string) => {
-    if (users.length <= 0) {
+    if (user) {
       createUser(name)
     } else {
       editUser(Id, name) 
