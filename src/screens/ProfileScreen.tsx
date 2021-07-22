@@ -26,7 +26,7 @@ const ProfileScreen = ({ navigation }: Props) => {
         </TouchableOpacity>
       )
     })
-    if (user) setName(user.Name)
+    if (user.Name.length > 0) setName(user.Name)
     console.log("CHECK HERE", user.Name);
 
   })

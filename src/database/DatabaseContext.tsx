@@ -38,7 +38,7 @@ export const DatabaseProvider = ({ children }: any) => {
   const [initialInvs, setInitialInvs] = useState<number>(0)
   const [user, setUser] = useState<User>({
     Id: 0,
-    Name: 'Not Set Yet'
+    Name: ''
   });
 
   useEffect(() => {
@@ -152,17 +152,13 @@ export const DatabaseProvider = ({ children }: any) => {
   }
 
   const getUser = async () => {
-    let dbUsers: User;
     try {
       db.transaction(tx => {
         tx.executeSql(`
           SELECT * FROM Users
         `, [], (tx, res) => {
           for (let i = 0; i < res.rows.length; i++) {
-            // console.log("User", res.rows.item(i));
             let user = res.rows.item(i);
-            // dbUsers.push(user);
-            console.log(dbUsers);
             setUser(user);
           }
         })
