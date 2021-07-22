@@ -1,4 +1,4 @@
-package com.sqlite;
+package com.arturofilio.dogecoin_tracker;
 
 import android.os.Bundle;
 import com.facebook.react.ReactActivity;

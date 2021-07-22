@@ -51,13 +51,19 @@ const ProfileScreen = ({ navigation }: Props) => {
           <Text style={{ fontWeight: 'bold' }}> {(currentTotal / currentPrice).toFixed(2)} </Text>
           stocks
         </Text>{'\n'}
-        <Text style={{ color: 'black' }}>Your Gain/Loss is $
-          <Text style={currentPrice > initialInvs ? { color: 'green' } : { color: 'red' }}>{' '}
-            {(currentTotal - initialInvs).toFixed(2)}
+        <Text style={{ color: 'black' }}>Your Gain/Loss is 
+          <Text style={currentTotal >=  initialInvs ? { color: 'green', fontWeight: 'bold'} : { color: 'red', fontWeight: 'bold' }}>{' '}
+            ${(currentTotal - initialInvs).toFixed(2)}
           </Text>
         </Text>{'\n'}
+        <Text>
+          Your current Capital is 
+            <Text style={{fontWeight: 'bold'}}>{' '}
+              ${currentTotal.toFixed(2)}
+            </Text>
+        </Text>{'\n'}
         <Text>And your initial Investment is
-          <Text style={{ fontWeight: 'bold' }}> ${initialInvs.toFixed(2)}</Text>
+          <Text style={{ fontWeight: 'bold', color: 'grey' }}> ${initialInvs.toFixed(2)}</Text>
         </Text>
       </Text>
     </View>

@@ -1,4 +1,4 @@
-package com.sqlite;
+package com.arturofilio.dogecoin_tracker;
 
 import org.devio.rn.splashscreen.SplashScreenReactPackage;
 import android.app.Application;
