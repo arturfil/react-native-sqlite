@@ -1,5 +1,9 @@
-<manifest xmlns:android="http://schemas.android.com/apk/res/android"
-  package="com.arturofilio.dogecoin_tracker">
+<manifest 
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  package="com.arturofilio.dogecoin_tracker"
+  android:versionCode="44"
+  android:versionName="1.4.4"  
+>
 
     <uses-permission android:name="android.permission.INTERNET" />
 
