@@ -59,4 +59,4 @@ buck-out/
 /ios/Pods/
 
 #Arturos
-/android/gradle.properties
+# /android/gradle.properties
