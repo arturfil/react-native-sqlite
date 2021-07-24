@@ -1,6 +1,6 @@
 import { TabActions } from '@react-navigation/native'
 import React, { useContext } from 'react'
-import { Alert, StyleSheet, TextInput } from 'react-native'
+import { Alert, Keyboard, Platform, SafeAreaView, StyleSheet, TextInput } from 'react-native'
 import { View } from 'react-native'
 import { Text } from 'react-native'
 import CustomButton from '../components/CustomButton'
@@ -25,49 +25,40 @@ const AddStockScreent = ({navigation}:any) => {
   }
 
   return (
-    <View style={globalStyles.viewContainer}>
+    <SafeAreaView style={globalStyles.viewContainer}>
       <Text style={globalStyles.title}>
         Add your stock
       </Text>
-      <View style={style.inputBox}>
+      <View style={globalStyles.inputBox}>
+        <Text>Name</Text>
         <TextInput 
           onChangeText={value => onChange(value, 'name')} 
           value={name} 
-          style={style.input} 
-          placeholder="Enter Name" />
+          style={globalStyles.input} 
+          placeholder="Enter Name" 
+          placeholderTextColor="gray"/>
+        <Text style={{marginTop: 20}}>Purchace Price</Text>
         <TextInput 
           onChangeText={value => onChange(value, 'price')} 
           value={price} 
-          style={style.input} 
-          keyboardType="number-pad" 
-          placeholder="Enter Price at Purchase" />
+          style={globalStyles.input} 
+          returnKeyType='done'
+          keyboardType={Platform.OS == 'android' ? "number-pad" : "numeric" }
+          placeholder="Enter Price at Purchase" 
+          placeholderTextColor="gray"/>
+        <Text style={{marginTop: 20}}>Quantity</Text>
         <TextInput 
           onChangeText={value => onChange(value, 'quantity')} 
           value={quantity.toString()} 
-          style={style.input} 
-          keyboardType="number-pad" 
+          style={globalStyles.input} 
+          returnKeyType='done'
+          keyboardType={Platform.OS == 'android' ? "number-pad" : "numeric" }
+          placeholderTextColor="gray" 
           placeholder="Enter Enter quantity" />
         <CustomButton top={20} title="Create Crypto Purchase" func={() => createPurchse() } />
       </View>
-    </View>
+    </SafeAreaView>
   )
 }
-
-const style = StyleSheet.create({
-  inputBox: {
-    marginTop: 20,
-    flex: 1
-  },
-  input: {
-    borderRadius: 6,
-    marginTop: 20,
-    borderColor: 'lightgrey',
-    color: COLORS.black,
-    // fontWeight: 'bold',
-    fontSize: 16,
-    borderWidth: 2,
-    paddingLeft: 20
-  }
-})
 
 export default AddStockScreent

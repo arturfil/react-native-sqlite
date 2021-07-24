@@ -45,29 +45,11 @@ const EditProfileScreen = ({navigation}: Props) => {
       <TextInput
         onChangeText={value => onChange(value, 'name')}
         value={name}
-        style={style.input}
+        style={globalStyles.input}
         placeholder="Enter Name" />
       <CustomButton top={20} title="Set Name" func={() => createOrEditUser(name)} />
     </View>
   )
 }
-
-const style = StyleSheet.create({
-  inputBox: {
-    marginTop: 20,
-    flex: 1
-  },
-  input: {
-    borderRadius: 6,
-    marginTop: 20,
-    borderColor: 'lightgrey',
-    color: COLORS.black,
-    // fontWeight: 'bold',
-    fontSize: 16,
-    borderWidth: 2,
-    paddingLeft: 20
-  }
-})
-
 
 export default EditProfileScreen

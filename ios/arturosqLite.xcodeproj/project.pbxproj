@@ -11,23 +11,9 @@
 		13B07FBC1A68108700A75B9A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB01A68108700A75B9A /* AppDelegate.m */; };
 		13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
+		4BDB9999ED248E9EF52840C9 /* libPods-sqLite-sqLiteTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = AEED12D94005A99E1089E5CB /* libPods-sqLite-sqLiteTests.a */; };
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
-		34F84179440B4378B064F838 /* AntDesign.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 27090E101371459AB55D61B1 /* AntDesign.ttf */; };
-		B7FCEDA6E4F0423A8FF554E0 /* Entypo.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D3C5FDACCB5342F892F042BA /* Entypo.ttf */; };
-		B2A0E047F1E2483898689EDF /* EvilIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8CD216CF0C5F40F5AF74100F /* EvilIcons.ttf */; };
-		8B8A60DDB9674CBCAA68C0D0 /* Feather.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7EF0052FEDB1457AB81750E5 /* Feather.ttf */; };
-		50F1A175D72942DC8B71A719 /* FontAwesome.ttf in Resources */ = {isa = PBXBuildFile; fileRef = BE76CCE0ABA248C6AD78846E /* FontAwesome.ttf */; };
-		75967625F0674B02B3086BBF /* FontAwesome5_Brands.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4AA25E6222FE4814B88C4098 /* FontAwesome5_Brands.ttf */; };
-		1E2594E1572A4B48AD1BCB25 /* FontAwesome5_Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0279375C50E9460996637F8E /* FontAwesome5_Regular.ttf */; };
-		CEDDCF579AB54036A49964F0 /* FontAwesome5_Solid.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 10326241C02B4D45BB2D364B /* FontAwesome5_Solid.ttf */; };
-		9ED90B62F9F54FD0A6EDC02B /* Fontisto.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 92DBD9D27446471EB66AFA85 /* Fontisto.ttf */; };
-		A79CFB8DB12243BC9E2C6029 /* Foundation.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 81149DD9DA3B4FF3920BBB9A /* Foundation.ttf */; };
-		4FB10B4DEEA440609D1349FE /* Ionicons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FCA3E5202F7C46F4B43B7715 /* Ionicons.ttf */; };
-		5E50A18B3A3142E3B7510D95 /* MaterialCommunityIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A314338CAC044A78AC3BA5EB /* MaterialCommunityIcons.ttf */; };
-		8DE63F61D0094B3ABE8D6BCF /* MaterialIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E43DD4B383EA48BE97BEAD00 /* MaterialIcons.ttf */; };
-		88CF72B8BF0E48F49B7F1312 /* Octicons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7BDAF6B1ACBF49B1BAEAE098 /* Octicons.ttf */; };
-		C78A0F95F4C949519C89FE92 /* SimpleLineIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B8AEFE1AA9AF43D59B4D059F /* SimpleLineIcons.ttf */; };
-		A8576CE8C59F433D93BBF074 /* Zocial.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 09120343259041B696ED4E18 /* Zocial.ttf */; };
+		EC6FFDF36D5C4C476C6B65AB /* libPods-sqLite.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D9436B3B4A4B8CE60178EF16 /* libPods-sqLite.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -41,33 +27,24 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		00E356EE1AD99517003FC87E /* sqLiteTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = sqLiteTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		00E356EE1AD99517003FC87E /* arturosqLiteTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = arturosqLiteTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		00E356F11AD99517003FC87E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		00E356F21AD99517003FC87E /* sqLiteTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = sqLiteTests.m; sourceTree = "<group>"; };
-		13B07F961A680F5B00A75B9A /* sqLite.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = sqLite.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		13B07F961A680F5B00A75B9A /* arturosqLite.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = arturosqLite.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		13B07FAF1A68108700A75B9A /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = sqLite/AppDelegate.h; sourceTree = "<group>"; };
 		13B07FB01A68108700A75B9A /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AppDelegate.m; path = sqLite/AppDelegate.m; sourceTree = "<group>"; };
 		13B07FB51A68108700A75B9A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = sqLite/Images.xcassets; sourceTree = "<group>"; };
 		13B07FB61A68108700A75B9A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = sqLite/Info.plist; sourceTree = "<group>"; };
 		13B07FB71A68108700A75B9A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = sqLite/main.m; sourceTree = "<group>"; };
+		1F441008ABF08F27365BB834 /* Pods-sqLite.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-sqLite.debug.xcconfig"; path = "Target Support Files/Pods-sqLite/Pods-sqLite.debug.xcconfig"; sourceTree = "<group>"; };
 		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = sqLite/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		848A5D2826AB892700563A9F /* MaterialIcons.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = MaterialIcons.ttf; path = "../../node_modules/react-native-vector-icons/Fonts/MaterialIcons.ttf"; sourceTree = "<group>"; };
+		AC55E4F3D624E1A809CFD303 /* Pods-sqLite-sqLiteTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-sqLite-sqLiteTests.debug.xcconfig"; path = "Target Support Files/Pods-sqLite-sqLiteTests/Pods-sqLite-sqLiteTests.debug.xcconfig"; sourceTree = "<group>"; };
+		AEED12D94005A99E1089E5CB /* libPods-sqLite-sqLiteTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-sqLite-sqLiteTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		D75B6A272BFC70DACDA0C9C9 /* Pods-sqLite-sqLiteTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-sqLite-sqLiteTests.release.xcconfig"; path = "Target Support Files/Pods-sqLite-sqLiteTests/Pods-sqLite-sqLiteTests.release.xcconfig"; sourceTree = "<group>"; };
+		D9436B3B4A4B8CE60178EF16 /* libPods-sqLite.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-sqLite.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		EA062C3E975436495AED3999 /* Pods-sqLite.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-sqLite.release.xcconfig"; path = "Target Support Files/Pods-sqLite/Pods-sqLite.release.xcconfig"; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
-		27090E101371459AB55D61B1 /* AntDesign.ttf */ = {isa = PBXFileReference; name = "AntDesign.ttf"; path = "../node_modules/react-native-vector-icons/Fonts/AntDesign.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		D3C5FDACCB5342F892F042BA /* Entypo.ttf */ = {isa = PBXFileReference; name = "Entypo.ttf"; path = "../node_modules/react-native-vector-icons/Fonts/Entypo.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		8CD216CF0C5F40F5AF74100F /* EvilIcons.ttf */ = {isa = PBXFileReference; name = "EvilIcons.ttf"; path = "../node_modules/react-native-vector-icons/Fonts/EvilIcons.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		7EF0052FEDB1457AB81750E5 /* Feather.ttf */ = {isa = PBXFileReference; name = "Feather.ttf"; path = "../node_modules/react-native-vector-icons/Fonts/Feather.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		BE76CCE0ABA248C6AD78846E /* FontAwesome.ttf */ = {isa = PBXFileReference; name = "FontAwesome.ttf"; path = "../node_modules/react-native-vector-icons/Fonts/FontAwesome.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		4AA25E6222FE4814B88C4098 /* FontAwesome5_Brands.ttf */ = {isa = PBXFileReference; name = "FontAwesome5_Brands.ttf"; path = "../node_modules/react-native-vector-icons/Fonts/FontAwesome5_Brands.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		0279375C50E9460996637F8E /* FontAwesome5_Regular.ttf */ = {isa = PBXFileReference; name = "FontAwesome5_Regular.ttf"; path = "../node_modules/react-native-vector-icons/Fonts/FontAwesome5_Regular.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		10326241C02B4D45BB2D364B /* FontAwesome5_Solid.ttf */ = {isa = PBXFileReference; name = "FontAwesome5_Solid.ttf"; path = "../node_modules/react-native-vector-icons/Fonts/FontAwesome5_Solid.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		92DBD9D27446471EB66AFA85 /* Fontisto.ttf */ = {isa = PBXFileReference; name = "Fontisto.ttf"; path = "../node_modules/react-native-vector-icons/Fonts/Fontisto.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		81149DD9DA3B4FF3920BBB9A /* Foundation.ttf */ = {isa = PBXFileReference; name = "Foundation.ttf"; path = "../node_modules/react-native-vector-icons/Fonts/Foundation.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		FCA3E5202F7C46F4B43B7715 /* Ionicons.ttf */ = {isa = PBXFileReference; name = "Ionicons.ttf"; path = "../node_modules/react-native-vector-icons/Fonts/Ionicons.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		A314338CAC044A78AC3BA5EB /* MaterialCommunityIcons.ttf */ = {isa = PBXFileReference; name = "MaterialCommunityIcons.ttf"; path = "../node_modules/react-native-vector-icons/Fonts/MaterialCommunityIcons.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		E43DD4B383EA48BE97BEAD00 /* MaterialIcons.ttf */ = {isa = PBXFileReference; name = "MaterialIcons.ttf"; path = "../node_modules/react-native-vector-icons/Fonts/MaterialIcons.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		7BDAF6B1ACBF49B1BAEAE098 /* Octicons.ttf */ = {isa = PBXFileReference; name = "Octicons.ttf"; path = "../node_modules/react-native-vector-icons/Fonts/Octicons.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		B8AEFE1AA9AF43D59B4D059F /* SimpleLineIcons.ttf */ = {isa = PBXFileReference; name = "SimpleLineIcons.ttf"; path = "../node_modules/react-native-vector-icons/Fonts/SimpleLineIcons.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		09120343259041B696ED4E18 /* Zocial.ttf */ = {isa = PBXFileReference; name = "Zocial.ttf"; path = "../node_modules/react-native-vector-icons/Fonts/Zocial.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,6 +52,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4BDB9999ED248E9EF52840C9 /* libPods-sqLite-sqLiteTests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -82,6 +60,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EC6FFDF36D5C4C476C6B65AB /* libPods-sqLite.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -122,6 +101,8 @@
 			isa = PBXGroup;
 			children = (
 				ED297162215061F000B7C4FE /* JavaScriptCore.framework */,
+				D9436B3B4A4B8CE60178EF16 /* libPods-sqLite.a */,
+				AEED12D94005A99E1089E5CB /* libPods-sqLite-sqLiteTests.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -136,12 +117,14 @@
 		83CBB9F61A601CBA00E9B192 = {
 			isa = PBXGroup;
 			children = (
+				8415A22B26AB6E6900D17810 /* Fonts */,
 				13B07FAE1A68108700A75B9A /* sqLite */,
 				832341AE1AAA6A7D00B99B32 /* Libraries */,
 				00E356EF1AD99517003FC87E /* sqLiteTests */,
 				83CBBA001A601CBA00E9B192 /* Products */,
 				2D16E6871FA4F8E400B85C8A /* Frameworks */,
 				F131509FB30C4CFB83090A8D /* Resources */,
+				9BC2E47D1413E85139838615 /* Pods */,
 			);
 			indentWidth = 2;
 			sourceTree = "<group>";
@@ -151,74 +134,82 @@
 		83CBBA001A601CBA00E9B192 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				13B07F961A680F5B00A75B9A /* sqLite.app */,
-				00E356EE1AD99517003FC87E /* sqLiteTests.xctest */,
+				13B07F961A680F5B00A75B9A /* arturosqLite.app */,
+				00E356EE1AD99517003FC87E /* arturosqLiteTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		F131509FB30C4CFB83090A8D /* Resources */ = {
-			isa = "PBXGroup";
+		8415A22B26AB6E6900D17810 /* Fonts */ = {
+			isa = PBXGroup;
 			children = (
-				27090E101371459AB55D61B1 /* AntDesign.ttf */,
-				D3C5FDACCB5342F892F042BA /* Entypo.ttf */,
-				8CD216CF0C5F40F5AF74100F /* EvilIcons.ttf */,
-				7EF0052FEDB1457AB81750E5 /* Feather.ttf */,
-				BE76CCE0ABA248C6AD78846E /* FontAwesome.ttf */,
-				4AA25E6222FE4814B88C4098 /* FontAwesome5_Brands.ttf */,
-				0279375C50E9460996637F8E /* FontAwesome5_Regular.ttf */,
-				10326241C02B4D45BB2D364B /* FontAwesome5_Solid.ttf */,
-				92DBD9D27446471EB66AFA85 /* Fontisto.ttf */,
-				81149DD9DA3B4FF3920BBB9A /* Foundation.ttf */,
-				FCA3E5202F7C46F4B43B7715 /* Ionicons.ttf */,
-				A314338CAC044A78AC3BA5EB /* MaterialCommunityIcons.ttf */,
-				E43DD4B383EA48BE97BEAD00 /* MaterialIcons.ttf */,
-				7BDAF6B1ACBF49B1BAEAE098 /* Octicons.ttf */,
-				B8AEFE1AA9AF43D59B4D059F /* SimpleLineIcons.ttf */,
-				09120343259041B696ED4E18 /* Zocial.ttf */,
+				848A5D2826AB892700563A9F /* MaterialIcons.ttf */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
+		9BC2E47D1413E85139838615 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				1F441008ABF08F27365BB834 /* Pods-sqLite.debug.xcconfig */,
+				EA062C3E975436495AED3999 /* Pods-sqLite.release.xcconfig */,
+				AC55E4F3D624E1A809CFD303 /* Pods-sqLite-sqLiteTests.debug.xcconfig */,
+				D75B6A272BFC70DACDA0C9C9 /* Pods-sqLite-sqLiteTests.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		F131509FB30C4CFB83090A8D /* Resources */ = {
+			isa = PBXGroup;
+			children = (
 			);
 			name = Resources;
 			sourceTree = "<group>";
-			path = "";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		00E356ED1AD99517003FC87E /* sqLiteTests */ = {
+		00E356ED1AD99517003FC87E /* arturosqLiteTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 00E357021AD99517003FC87E /* Build configuration list for PBXNativeTarget "sqLiteTests" */;
+			buildConfigurationList = 00E357021AD99517003FC87E /* Build configuration list for PBXNativeTarget "arturosqLiteTests" */;
 			buildPhases = (
+				6BBF2E2EA52D4151DBDD9B71 /* [CP] Check Pods Manifest.lock */,
 				00E356EA1AD99517003FC87E /* Sources */,
 				00E356EB1AD99517003FC87E /* Frameworks */,
 				00E356EC1AD99517003FC87E /* Resources */,
+				01E36924E79A6D6EEC14788D /* [CP] Embed Pods Frameworks */,
+				ED978CD5F9BAC5B7726ED763 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 				00E356F51AD99517003FC87E /* PBXTargetDependency */,
 			);
-			name = sqLiteTests;
+			name = arturosqLiteTests;
 			productName = sqLiteTests;
-			productReference = 00E356EE1AD99517003FC87E /* sqLiteTests.xctest */;
+			productReference = 00E356EE1AD99517003FC87E /* arturosqLiteTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		13B07F861A680F5B00A75B9A /* sqLite */ = {
+		13B07F861A680F5B00A75B9A /* arturosqLite */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 13B07F931A680F5B00A75B9A /* Build configuration list for PBXNativeTarget "sqLite" */;
+			buildConfigurationList = 13B07F931A680F5B00A75B9A /* Build configuration list for PBXNativeTarget "arturosqLite" */;
 			buildPhases = (
+				83DBEFD55D182046CB827970 /* [CP] Check Pods Manifest.lock */,
 				FD10A7F022414F080027D42C /* Start Packager */,
 				13B07F871A680F5B00A75B9A /* Sources */,
 				13B07F8C1A680F5B00A75B9A /* Frameworks */,
 				13B07F8E1A680F5B00A75B9A /* Resources */,
 				00DD1BFF1BD5951E006B06BC /* Bundle React Native code and images */,
+				7771C545B5528CAB112F2FCB /* [CP] Embed Pods Frameworks */,
+				F362CB78D3BF975E34C06751 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = sqLite;
+			name = arturosqLite;
 			productName = sqLite;
-			productReference = 13B07F961A680F5B00A75B9A /* sqLite.app */;
+			productReference = 13B07F961A680F5B00A75B9A /* arturosqLite.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -238,7 +229,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 83CBB9FA1A601CBA00E9B192 /* Build configuration list for PBXProject "sqLite" */;
+			buildConfigurationList = 83CBB9FA1A601CBA00E9B192 /* Build configuration list for PBXProject "arturosqLite" */;
 			compatibilityVersion = "Xcode 12.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -251,8 +242,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				13B07F861A680F5B00A75B9A /* sqLite */,
-				00E356ED1AD99517003FC87E /* sqLiteTests */,
+				13B07F861A680F5B00A75B9A /* arturosqLite */,
+				00E356ED1AD99517003FC87E /* arturosqLiteTests */,
 			);
 		};
 /* End PBXProject section */
@@ -271,22 +262,6 @@
 			files = (
 				81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */,
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
-				34F84179440B4378B064F838 /* AntDesign.ttf in Resources */,
-				B7FCEDA6E4F0423A8FF554E0 /* Entypo.ttf in Resources */,
-				B2A0E047F1E2483898689EDF /* EvilIcons.ttf in Resources */,
-				8B8A60DDB9674CBCAA68C0D0 /* Feather.ttf in Resources */,
-				50F1A175D72942DC8B71A719 /* FontAwesome.ttf in Resources */,
-				75967625F0674B02B3086BBF /* FontAwesome5_Brands.ttf in Resources */,
-				1E2594E1572A4B48AD1BCB25 /* FontAwesome5_Regular.ttf in Resources */,
-				CEDDCF579AB54036A49964F0 /* FontAwesome5_Solid.ttf in Resources */,
-				9ED90B62F9F54FD0A6EDC02B /* Fontisto.ttf in Resources */,
-				A79CFB8DB12243BC9E2C6029 /* Foundation.ttf in Resources */,
-				4FB10B4DEEA440609D1349FE /* Ionicons.ttf in Resources */,
-				5E50A18B3A3142E3B7510D95 /* MaterialCommunityIcons.ttf in Resources */,
-				8DE63F61D0094B3ABE8D6BCF /* MaterialIcons.ttf in Resources */,
-				88CF72B8BF0E48F49B7F1312 /* Octicons.ttf in Resources */,
-				C78A0F95F4C949519C89FE92 /* SimpleLineIcons.ttf in Resources */,
-				A8576CE8C59F433D93BBF074 /* Zocial.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -306,6 +281,118 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "set -e\n\nexport NODE_BINARY=node\n../node_modules/react-native/scripts/react-native-xcode.sh\n";
+		};
+		01E36924E79A6D6EEC14788D /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-sqLite-sqLiteTests/Pods-sqLite-sqLiteTests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-sqLite-sqLiteTests/Pods-sqLite-sqLiteTests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-sqLite-sqLiteTests/Pods-sqLite-sqLiteTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		6BBF2E2EA52D4151DBDD9B71 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-sqLite-sqLiteTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		7771C545B5528CAB112F2FCB /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-sqLite/Pods-sqLite-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-sqLite/Pods-sqLite-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-sqLite/Pods-sqLite-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		83DBEFD55D182046CB827970 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-sqLite-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		ED978CD5F9BAC5B7726ED763 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-sqLite-sqLiteTests/Pods-sqLite-sqLiteTests-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-sqLite-sqLiteTests/Pods-sqLite-sqLiteTests-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-sqLite-sqLiteTests/Pods-sqLite-sqLiteTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F362CB78D3BF975E34C06751 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-sqLite/Pods-sqLite-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-sqLite/Pods-sqLite-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-sqLite/Pods-sqLite-resources.sh\"\n";
+			showEnvVarsInLog = 0;
 		};
 		FD10A7F022414F080027D42C /* Start Packager */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -351,7 +438,7 @@
 /* Begin PBXTargetDependency section */
 		00E356F51AD99517003FC87E /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 13B07F861A680F5B00A75B9A /* sqLite */;
+			target = 13B07F861A680F5B00A75B9A /* arturosqLite */;
 			targetProxy = 00E356F41AD99517003FC87E /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -359,6 +446,7 @@
 /* Begin XCBuildConfiguration section */
 		00E356F61AD99517003FC87E /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = AC55E4F3D624E1A809CFD303 /* Pods-sqLite-sqLiteTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				GCC_PREPROCESSOR_DEFINITIONS = (
@@ -379,12 +467,13 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/sqLite.app/sqLite";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/arturosqLite.app/arturosqLite";
 			};
 			name = Debug;
 		};
 		00E356F71AD99517003FC87E /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D75B6A272BFC70DACDA0C9C9 /* Pods-sqLite-sqLiteTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				COPY_PHASE_STRIP = NO;
@@ -402,16 +491,18 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/sqLite.app/sqLite";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/arturosqLite.app/arturosqLite";
 			};
 			name = Release;
 		};
 		13B07F941A680F5B00A75B9A /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1F441008ABF08F27365BB834 /* Pods-sqLite.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = M4YXV74ZZ5;
 				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = sqLite/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -423,8 +514,8 @@
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
-				PRODUCT_NAME = sqLite;
+				PRODUCT_BUNDLE_IDENTIFIER = org.reactjs.native.arturofilio.sqLite;
+				PRODUCT_NAME = arturosqLite;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				VERSIONING_SYSTEM = "apple-generic";
@@ -433,10 +524,12 @@
 		};
 		13B07F951A680F5B00A75B9A /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = EA062C3E975436495AED3999 /* Pods-sqLite.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = M4YXV74ZZ5;
 				INFOPLIST_FILE = sqLite/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -447,8 +540,8 @@
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
-				PRODUCT_NAME = sqLite;
+				PRODUCT_BUNDLE_IDENTIFIER = org.reactjs.native.arturofilio.sqLite;
+				PRODUCT_NAME = arturosqLite;
 				SWIFT_VERSION = 5.0;
 				VERSIONING_SYSTEM = "apple-generic";
 			};
@@ -487,6 +580,7 @@
 				COPY_PHASE_STRIP = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
+				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = "arm64 ";
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -551,6 +645,7 @@
 				COPY_PHASE_STRIP = YES;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = "arm64 ";
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
@@ -578,7 +673,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		00E357021AD99517003FC87E /* Build configuration list for PBXNativeTarget "sqLiteTests" */ = {
+		00E357021AD99517003FC87E /* Build configuration list for PBXNativeTarget "arturosqLiteTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				00E356F61AD99517003FC87E /* Debug */,
@@ -587,7 +682,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		13B07F931A680F5B00A75B9A /* Build configuration list for PBXNativeTarget "sqLite" */ = {
+		13B07F931A680F5B00A75B9A /* Build configuration list for PBXNativeTarget "arturosqLite" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				13B07F941A680F5B00A75B9A /* Debug */,
@@ -596,7 +691,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		83CBB9FA1A601CBA00E9B192 /* Build configuration list for PBXProject "sqLite" */ = {
+		83CBB9FA1A601CBA00E9B192 /* Build configuration list for PBXProject "arturosqLite" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				83CBBA201A601CBA00E9B192 /* Debug */,

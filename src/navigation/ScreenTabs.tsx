@@ -1,7 +1,7 @@
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import React from 'react'
-// import Icon from 'react-native-vector-icons/MaterialIcons';
 import Icon from 'react-native-vector-icons/MaterialIcons';
+// import Icon from 'react-native-vector-icons/Ionicons';
 import AddStockScreen from '../screens/AddStockScreen';
 import HomeScreen from '../screens/HomeScreen';
 import ProfileScreen from '../screens/ProfileScreen';
@@ -17,12 +17,14 @@ const ScreenTabs = () => {
     <Tab.Navigator
       tabBarOptions={{
         activeTintColor: COLORS.primary,
+        inactiveTintColor: 'gray',
         labelStyle: {
           marginBottom: 10
         },
         style: {
           paddingTop: 10,
-          height: 60
+          height: 65,
+          paddingBottom: 2
         }
       }}
     >
@@ -31,7 +33,7 @@ const ScreenTabs = () => {
         component={CryptosNavigation}
         options={{
           tabBarLabel: "Stocks",
-          tabBarIcon: ({color}) => <Icon name="home-filled" color={color} size={25} />
+          tabBarIcon: ({color}) => <Icon name="home" color={color} size={25} />
         }}
       />
       <Tab.Screen
@@ -47,7 +49,7 @@ const ScreenTabs = () => {
         component={UsersNavigation}
         options={{
           tabBarLabel: "Profile",
-          tabBarIcon: ({color}) => <Icon name="person" color={color} size={25} />
+          tabBarIcon: ({color}) => (<Icon name="person" color={color} size={20} />)
         }}
       />
     </Tab.Navigator>
