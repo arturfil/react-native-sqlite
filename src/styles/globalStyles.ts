@@ -14,10 +14,14 @@ export const globalStyles = StyleSheet.create({
     marginTop: 20,
     flex: 1
   },
+  inputLabel: {
+    marginTop: 10,
+    color: "#00af00"
+  },
   input: {
     minHeight: 50,
     borderRadius: 6,
-    marginTop: 10,
+    marginTop: 5,
     borderColor: 'lightgrey',
     color: COLORS.black,
     fontSize: 16,

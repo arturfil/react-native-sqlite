@@ -68,14 +68,14 @@ const EditScreen = ({ navigation, route }: Props) => {
       {!loading ?
         (
           <View style={globalStyles.inputBox}>
-            <Text style={{marginTop: 20}}>Name</Text>
+            <Text style={globalStyles.inputLabel}>Name</Text>
             <TextInput
               onChangeText={value => onChange(value, 'name')}
               returnKeyType='done'
               value={name}
               style={globalStyles.input}
               placeholder="Enter Name" />
-            <Text style={{marginTop: 20}}>Purchase Price</Text>
+            <Text style={globalStyles.inputLabel}>Purchase Price</Text>
             <TextInput
               onChangeText={value => onChange(value, 'price')}
               value={price}
@@ -83,7 +83,7 @@ const EditScreen = ({ navigation, route }: Props) => {
               returnKeyType='done'
               keyboardType={Platform.OS == 'android' ? "number-pad" : "numeric" }
               placeholder="Enter Price at Purchase" />
-            <Text style={{marginTop: 20}}>Quantity</Text>
+            <Text style={globalStyles.inputLabel}>Quantity</Text>
             <TextInput
               onChangeText={value => onChange(value, 'quantity')}
               value={quantity?.toString()}

@@ -13,6 +13,7 @@
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
 		4BDB9999ED248E9EF52840C9 /* libPods-sqLite-sqLiteTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = AEED12D94005A99E1089E5CB /* libPods-sqLite-sqLiteTests.a */; };
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
+		848E464B26ACE20B00FF2E6B /* web_hi_res_512.png in Resources */ = {isa = PBXBuildFile; fileRef = 848E464A26ACE20A00FF2E6B /* web_hi_res_512.png */; };
 		EC6FFDF36D5C4C476C6B65AB /* libPods-sqLite.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D9436B3B4A4B8CE60178EF16 /* libPods-sqLite.a */; };
 /* End PBXBuildFile section */
 
@@ -39,6 +40,7 @@
 		1F441008ABF08F27365BB834 /* Pods-sqLite.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-sqLite.debug.xcconfig"; path = "Target Support Files/Pods-sqLite/Pods-sqLite.debug.xcconfig"; sourceTree = "<group>"; };
 		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = sqLite/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		848A5D2826AB892700563A9F /* MaterialIcons.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = MaterialIcons.ttf; path = "../../node_modules/react-native-vector-icons/Fonts/MaterialIcons.ttf"; sourceTree = "<group>"; };
+		848E464A26ACE20A00FF2E6B /* web_hi_res_512.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = web_hi_res_512.png; path = ../../../../Downloads/ic_launcher/web_hi_res_512.png; sourceTree = "<group>"; };
 		AC55E4F3D624E1A809CFD303 /* Pods-sqLite-sqLiteTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-sqLite-sqLiteTests.debug.xcconfig"; path = "Target Support Files/Pods-sqLite-sqLiteTests/Pods-sqLite-sqLiteTests.debug.xcconfig"; sourceTree = "<group>"; };
 		AEED12D94005A99E1089E5CB /* libPods-sqLite-sqLiteTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-sqLite-sqLiteTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D75B6A272BFC70DACDA0C9C9 /* Pods-sqLite-sqLiteTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-sqLite-sqLiteTests.release.xcconfig"; path = "Target Support Files/Pods-sqLite-sqLiteTests/Pods-sqLite-sqLiteTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -90,6 +92,7 @@
 				13B07FAF1A68108700A75B9A /* AppDelegate.h */,
 				13B07FB01A68108700A75B9A /* AppDelegate.m */,
 				13B07FB51A68108700A75B9A /* Images.xcassets */,
+				848E464A26ACE20A00FF2E6B /* web_hi_res_512.png */,
 				13B07FB61A68108700A75B9A /* Info.plist */,
 				81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */,
 				13B07FB71A68108700A75B9A /* main.m */,
@@ -261,6 +264,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */,
+				848E464B26ACE20B00FF2E6B /* web_hi_res_512.png in Resources */,
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

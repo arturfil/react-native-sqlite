@@ -30,14 +30,14 @@ const AddStockScreent = ({navigation}:any) => {
         Add your stock
       </Text>
       <View style={globalStyles.inputBox}>
-        <Text>Name</Text>
+        <Text style={globalStyles.inputLabel}>Name</Text>
         <TextInput 
           onChangeText={value => onChange(value, 'name')} 
           value={name} 
           style={globalStyles.input} 
           placeholder="Enter Name" 
           placeholderTextColor="gray"/>
-        <Text style={{marginTop: 20}}>Purchace Price</Text>
+        <Text style={globalStyles.inputLabel}>Purchace Price</Text>
         <TextInput 
           onChangeText={value => onChange(value, 'price')} 
           value={price} 
@@ -46,7 +46,7 @@ const AddStockScreent = ({navigation}:any) => {
           keyboardType={Platform.OS == 'android' ? "number-pad" : "numeric" }
           placeholder="Enter Price at Purchase" 
           placeholderTextColor="gray"/>
-        <Text style={{marginTop: 20}}>Quantity</Text>
+        <Text style={globalStyles.inputLabel}>Quantity</Text>
         <TextInput 
           onChangeText={value => onChange(value, 'quantity')} 
           value={quantity.toString()} 
